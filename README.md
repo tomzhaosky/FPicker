@@ -47,7 +47,7 @@ FPicker/
 git clone https://github.com/tomzhaosky/FPicker.git
 cd FPicker
 
-conda create -n fpicker python=3.10
+conda create -n fpicker python=3.8.20
 conda activate fpicker
 ~~~
 
