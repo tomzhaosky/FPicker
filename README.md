@@ -13,62 +13,55 @@ Department of Electronic Engineering, Tsinghua University
 The source code is released under the **GNU General Public License v3.0 (GPLv3)**.  
 The datasets, annotations, masks, and pretrained weights are released for **non-commercial research use** under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
 
-## News
-
-- **Coming soon:** The full codebase, pretrained weights, and synthetic Cryo-EM datasets will be released.
-
 ## Abstract
 
 Automating filament tracing in Cryo-Electron Microscopy (Cryo-EM) is essential for 3D helical reconstruction but remains challenging under intersecting topologies and extremely low signal-to-noise ratios. Existing paradigms suffer from severe topological fragmentation, center drift, error accumulation, or artificial closed-curve constraints.
 
 To address these challenges, we propose **FPicker**, a topology-guided framework for filament tracing in low-SNR microscopy. FPicker unifies perception through a center-endpoint representation and an open-curve evolution module, explicitly modeling non-cyclic filament connectivity. On simulated low-SNR Cryo-EM benchmarks, FPicker achieves strong tracing accuracy and improved topological continuity. It also demonstrates robust transfer potential on real-world Cryo-EM data.
 
+## News
+
+- **[Coming Soon]** The full codebase, pretrained weights, and synthetic Cryo-EM datasets will be released prior to the ECCV 2026 conference.
+
+
 ## Repository Structure
 
-```text
+~~~text
 FPicker/
-|-- backbone/              # Backbone networks: ResNet, DLA, and Swin Transformer
-|-- config/                # Model, training, and synthetic data generation configs
-|-- data/                  # Dataset loader, augmentation, target generation, and simulator
-|-- models/                # FPicker model, decoder, CenterNet-style head, and snake module
-|-- utils/                 # Losses, training utilities, evaluation, and visualization
-|-- demo.py                # Single-image inference demo
-|-- eval.py                # Quantitative evaluation on the test split
-|-- test.py                # Test-set inference and visualization
-|-- train.py               # Training and optional synthetic data generation
+|-- backbone/        # Backbone networks
+|-- config/          # Model, training, and data generation configs
+|-- data/            # Dataset loader, augmentation, target generation, and simulator
+|-- models/          # FPicker model and related modules
+|-- utils/           # Losses, evaluation, training, and visualization utilities
+|-- demo.py          # Single-image inference
+|-- eval.py          # Quantitative evaluation
+|-- test.py          # Test-set visualization
+|-- train.py         # Training
 |-- README.md
 `-- LICENSE
-```
-
-Before public release, remove local runtime cache folders such as `__pycache__/`.
+~~~
 
 ## Installation
 
-```bash
+~~~bash
 git clone https://github.com/tomzhaosky/FPicker.git
 cd FPicker
 
 conda create -n fpicker python=3.10
 conda activate fpicker
-```
+~~~
 
-Install PyTorch following the CUDA version on your machine, then install the remaining dependencies:
+Install PyTorch according to your CUDA version, then install the required packages:
 
-```bash
+~~~bash
 pip install numpy opencv-python scipy pillow biopython tqdm torchvision
-```
-
-If a `requirements.txt` file is provided in a later release, use:
-
-```bash
-pip install -r requirements.txt
-```
+~~~
 
 ## Dataset
 
-FPicker expects a COCO-style synthetic Cryo-EM dataset with the following layout:
+FPicker uses COCO-style synthetic Cryo-EM datasets (Cryo-Sim) or labeled EMPIAR datasets:
 
-```text
+~~~text
 cryosim/
 |-- annotations/
 |   |-- instances_train2025.json
@@ -82,79 +75,86 @@ cryosim/
     |-- train2025/
     |-- val2025/
     `-- test2025/
-```
+~~~
 
 Each annotation file contains topology-aware filament annotations, including ordered centerline points, sequential edges, bounding boxes, seed points, and image-level simulation parameters such as defocus.
 
-The default dataset path in the scripts is `./cryosim`. If you use the current release layout where `FPicker/` is placed next to `annotations/`, `images/`, and `masks/`, run commands from inside `FPicker/` with:
-
-```bash
---data_dir ..
-```
+If the dataset folder is placed outside `FPicker/`, specify its path with `--data_dir`.
 
 ## Training
 
-Train FPicker with one GPU:
-
-```bash
+~~~bash
 python train.py --data_dir ./cryosim --arch resnet50 --gpus 0 --save_dir ./checkpoints
-```
-
-If your dataset is the parent folder of `FPicker/`, use:
-
-```bash
-python train.py --data_dir .. --arch resnet50 --gpus 0 --save_dir ./checkpoints
-```
+~~~
 
 Supported backbones:
 
-```text
+~~~text
 resnet50 | dla34 | swin_t
-```
+~~~
 
-Resume from the last checkpoint:
+Multi-GPU training with DDP:
 
-```bash
+~~~bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --standalone --nproc_per_node=8 train.py \
+  --data_dir ./cryosim \
+  --arch resnet50 \
+  --batch_size 12 \
+  --save_dir ./checkpoints
+~~~
+
+Here, `--batch_size` denotes the per-GPU batch size. The effective global batch size is `batch_size x number_of_GPUs`.
+
+Resume training:
+
+~~~bash
 python train.py --data_dir ./cryosim --resume --save_dir ./checkpoints
-```
+~~~
 
-Initialize from pretrained weights while resetting the optimizer and scheduler:
+Train from pretrained weights:
 
-```bash
+~~~bash
 python train.py --data_dir ./cryosim --teach_path path/to/pretrained.pth
-```
-
-Generate a small synthetic dataset before training:
-
-```bash
-python train.py --gen_data --gen_num 200 --data_dir ./cryosim
-```
+~~~
 
 ## Evaluation
 
-Run quantitative evaluation on the test split:
-
-```bash
+~~~bash
 python eval.py --data_dir ./cryosim --model_path ./checkpoints/model_last.pth --arch resnet50
-```
+~~~
 
 ## Visualization
 
-Run test-set inference and save visualized predictions:
+Test-set visualization:
 
-```bash
+~~~bash
 python test.py --data_dir ./cryosim --model_path ./checkpoints/model_last.pth --save_dir ./results/vis --threshold 0.5
-```
+~~~
 
-Run a single-image demo:
+Single-image demo:
 
-```bash
+~~~bash
 python demo.py --image_path path/to/image.png --model_path ./checkpoints/model_last.pth --output_path demo_result.jpg
-```
+~~~
 
 ## Citation
 
 If you find FPicker useful in your research, please cite:
 
-```bibtex
+~~~bibtex
 @inproceedings{zhao2026fpicker,
+  title={FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy},
+  author={Zhao, Tingyin and Huang, Mingtao and Shen, Yuan},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026}
+}
+~~~
+
+## License
+
+This repository uses separate licenses for code and data-related assets.
+
+**Source code:** GNU General Public License v3.0 (GPLv3).  
+**Datasets, annotations, masks, and pretrained weights:** Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+
+Commercial use of the datasets, annotations, masks, or pretrained weights is not permitted without prior written permission from the authors.
