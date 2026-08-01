@@ -21,8 +21,8 @@ To address these challenges, we propose **FPicker**, a topology-guided framework
 
 ## News
 
-- **[2026.06]** Our paper has been accepted to ECCV 2026! 🎉
 - **[Coming Soon]** The full codebase, pretrained weights, and synthetic Cryo-EM datasets will be released prior to the ECCV 2026 conference.
+- **[2026.06]** Our paper has been accepted to ECCV 2026! 🎉
 
 
 ## Repository Structure
@@ -101,6 +101,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --standalone --nproc_per_node=8 tr
   --data_dir ./cryosim \
   --arch resnet50 \
   --batch_size 12 \
+  --gpus 0,1,2,3,4,5,6,7 \
   --save_dir ./checkpoints
 ~~~
 
