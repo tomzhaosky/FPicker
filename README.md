@@ -11,11 +11,15 @@ This is the official PyTorch implementation of the **ECCV 2026** paper:
 *Tingyin Zhao, Mingtao Huang, Yuan Shen*  
 Department of Electronic Engineering, Tsinghua University
 
-<div align="center">
+<p align="center">
   <a href="https://www.youtube.com/watch?v=LkFeeidLxtY">
-    <img src="https://img.youtube.com/vi/LkFeeidLxtY/maxresdefault.jpg" alt="FPicker ECCV 2026 Presentation Video" width="850">
+    <img src="figure/poster_landscape.png" alt="FPicker ECCV 2026 Poster" width="850">
   </a>
-</div>
+</p>
+
+<p align="center">
+  <em>Click on the poster above or <a href="https://www.youtube.com/watch?v=LkFeeidLxtY">here</a> to watch our ECCV 2026 presentation video on YouTube.</em>
+</p>
 
 The source code is released under the **GNU General Public License v3.0 (GPLv3)**.  
 The datasets, annotations, masks, and pretrained weights are released for **non-commercial research use** under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
@@ -29,6 +33,7 @@ To address these challenges, we propose **FPicker**, a topology-guided framework
 ## News
 
 - **[Coming Soon]** The full codebase, pretrained weights, and synthetic Cryo-EM datasets will be released prior to the ECCV 2026 conference.
+- **[2026.08]** Update the poster and presentation video.
 - **[2026.06]** Our paper has been accepted to ECCV 2026! 🎉
 
 
