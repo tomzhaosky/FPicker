@@ -1,6 +1,7 @@
 # FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy
 
 [![Conference](https://img.shields.io/badge/ECCV-2026-blue.svg)](https://eccv2026.ecva.net/)
+[![YouTube Video](https://img.shields.io/badge/YouTube-Watch%20Video-red.svg)](https://www.youtube.com/watch?v=LkFeeidLxtY)
 [![Code License: GPLv3](https://img.shields.io/badge/Code%20License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Dataset License: CC BY-NC 4.0](https://img.shields.io/badge/Dataset%20License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
@@ -10,13 +11,11 @@ This is the official PyTorch implementation of the **ECCV 2026** paper:
 *Tingyin Zhao, Mingtao Huang, Yuan Shen*  
 Department of Electronic Engineering, Tsinghua University
 
-<p align="center">
-  <img src="./figure/poster_landscape.png" alt="FPicker ECCV 2026 Poster" width="850">
-</p>
-
-<p align="center">
-  <strong><a href="https://www.youtube.com/watch?v=LkFeeidLxtY">📺 Watch our ECCV 2026 Presentation Video on YouTube</a></strong>
-</p>
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=LkFeeidLxtY">
+    <img src="https://img.youtube.com/vi/LkFeeidLxtY/maxresdefault.jpg" alt="FPicker ECCV 2026 Presentation Video" width="850">
+  </a>
+</div>
 
 The source code is released under the **GNU General Public License v3.0 (GPLv3)**.  
 The datasets, annotations, masks, and pretrained weights are released for **non-commercial research use** under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
