@@ -10,6 +10,14 @@ This is the official PyTorch implementation of the **ECCV 2026** paper:
 *Tingyin Zhao, Mingtao Huang, Yuan Shen*  
 Department of Electronic Engineering, Tsinghua University
 
+<p align="center">
+  <img src="./figure/poster_landscape.png" alt="FPicker ECCV 2026 Poster" width="850">
+</p>
+
+<p align="center">
+  <strong><a href="https://www.youtube.com/watch?v=LkFeeidLxtY">📺 Watch our ECCV 2026 Presentation Video on YouTube</a></strong>
+</p>
+
 The source code is released under the **GNU General Public License v3.0 (GPLv3)**.  
 The datasets, annotations, masks, and pretrained weights are released for **non-commercial research use** under the **Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)**.
 
