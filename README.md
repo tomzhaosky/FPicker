@@ -32,7 +32,8 @@ To address these challenges, we propose **FPicker**, a topology-guided framework
 
 ## News
 
-- **[Coming Soon]** The full codebase, pretrained weights, and synthetic Cryo-EM datasets will be released prior to the ECCV 2026 conference.
+- **[Coming Soon]** The pretrained weights, and synthetic Cryo-EM datasets will be released prior to the ECCV 2026 conference.
+- **[2026.09]** Update the full codebase.
 - **[2026.08]** Update the poster and presentation video.
 - **[2026.06]** Our paper has been accepted to ECCV 2026! 🎉
 
