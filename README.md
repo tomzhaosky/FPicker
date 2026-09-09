@@ -7,7 +7,7 @@
 
 This is the official PyTorch implementation of the **ECCV 2026** paper:
 
-**FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy**  
+**FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy** [[arXiv](https://doi.org/10.48550/arXiv.2609.08305)].
 *Tingyin Zhao, Mingtao Huang, Yuan Shen*  
 Department of Electronic Engineering, Tsinghua University
 
@@ -157,11 +157,14 @@ python demo.py --image_path path/to/image.png --model_path ./checkpoints/model_l
 If you find FPicker useful in your research, please cite:
 
 ~~~bibtex
-@inproceedings{zhao2026fpicker,
-  title={FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy},
-  author={Zhao, Tingyin and Huang, Mingtao and Shen, Yuan},
-  booktitle={European Conference on Computer Vision (ECCV)},
-  year={2026}
+@misc{zhao2026fpicker,
+      title={FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy}, 
+      author={Tingyin Zhao and Mingtao Huang and Yuan Shen},
+      year={2026},
+      eprint={2609.08305},
+      archivePrefix={arXiv},
+      primaryClass={I.4.6},
+      url={[https://doi.org/10.48550/arXiv.2609.08305](https://doi.org/10.48550/arXiv.2609.08305)}
 }
 ~~~
 
