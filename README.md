@@ -7,7 +7,7 @@
 
 This is the official PyTorch implementation of the **ECCV 2026** paper:
 
-**FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy** [[arXiv](https://doi.org/10.48550/arXiv.2609.08305)]<br>
+**FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy** [[arXiv](https://doi.org/10.48550/arXiv.2609.08305)] | [[Springer](https://doi.org/10.1007/978-3-032-37232-1_7)]<br>
 *Tingyin Zhao, Mingtao Huang, Yuan Shen*<br>
 Department of Electronic Engineering, Tsinghua University
 
