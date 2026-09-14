@@ -157,14 +157,15 @@ python demo.py --image_path path/to/image.png --model_path ./checkpoints/model_l
 If you find FPicker useful in your research, please cite:
 
 ~~~bibtex
-@misc{zhao2026fpicker,
-      title={FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy}, 
-      author={Tingyin Zhao and Mingtao Huang and Yuan Shen},
-      year={2026},
-      eprint={2609.08305},
-      archivePrefix={arXiv},
-      primaryClass={I.4.6},
-      url={[https://doi.org/10.48550/arXiv.2609.08305](https://doi.org/10.48550/arXiv.2609.08305)}
+@inproceedings{zhao2026fpicker,
+  title={FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy},
+  author={Zhao, Tingyin and Huang, Mingtao and Shen, Yuan},
+  booktitle={Computer Vision -- ECCV 2026},
+  volume={17014},
+  series={Lecture Notes in Computer Science},
+  year={2026},
+  publisher={Springer, Cham},
+  doi={10.1007/978-3-032-37232-1_7}
 }
 ~~~
 
