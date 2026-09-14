@@ -2,6 +2,7 @@
 
 [![Conference](https://img.shields.io/badge/ECCV-2026-blue.svg)](https://eccv2026.ecva.net/)
 [![YouTube Video](https://img.shields.io/badge/YouTube-Watch%20Video-red.svg)](https://www.youtube.com/watch?v=LkFeeidLxtY)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/tomzhaosky/Cryo-Sim)
 [![Code License: GPLv3](https://img.shields.io/badge/Code%20License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Dataset License: CC BY-NC 4.0](https://img.shields.io/badge/Dataset%20License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
@@ -32,8 +33,8 @@ To address these challenges, we propose **FPicker**, a topology-guided framework
 
 ## News
 
-- **[Coming Soon]** The pretrained weights, and synthetic Cryo-EM datasets will be released prior to the ECCV 2026 conference.
-- **[2026.09]** Update the full codebase.
+- **[2026.09]** Cryo-Sim dataset is now publicly available on [Hugging Face](https://huggingface.co/datasets/tomzhaosky/Cryo-Sim)! 🔥
+- **[2026.09]** Update the full codebase!
 - **[2026.08]** Update the poster and presentation video.
 - **[2026.06]** Our paper has been accepted to ECCV 2026! 🎉
 
@@ -73,7 +74,9 @@ pip install numpy opencv-python scipy pillow biopython tqdm torchvision
 
 ## Dataset
 
-FPicker uses COCO-style synthetic Cryo-EM datasets (Cryo-Sim) or labeled EMPIAR datasets:
+Please download the Cryo-Sim dataset from our [Hugging Face Repository](https://huggingface.co/datasets/tomzhaosky/Cryo-Sim). 
+
+After downloading and unzipping, FPicker expects the COCO-style dataset to be organized as follows:
 
 ~~~text
 cryosim/
