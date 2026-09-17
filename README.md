@@ -3,6 +3,7 @@
 [![Conference](https://img.shields.io/badge/ECCV-2026-blue.svg)](https://eccv2026.ecva.net/)
 [![YouTube Video](https://img.shields.io/badge/YouTube-Watch%20Video-red.svg)](https://www.youtube.com/watch?v=LkFeeidLxtY)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/tomzhaosky/Cryo-Sim)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Weights-blue)](https://huggingface.co/tomzhaosky/FPicker)
 [![Code License: GPLv3](https://img.shields.io/badge/Code%20License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Dataset License: CC BY-NC 4.0](https://img.shields.io/badge/Dataset%20License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
@@ -33,7 +34,7 @@ To address these challenges, we propose **FPicker**, a topology-guided framework
 
 ## News
 
-- **[2026.09]** Cryo-Sim dataset is now publicly available on [Hugging Face](https://huggingface.co/datasets/tomzhaosky/Cryo-Sim)! 🔥
+- **[2026.09]** Cryo-Sim dataset and FPicker weights are now publicly available on [Hugging Face](https://huggingface.co/datasets/tomzhaosky/Cryo-Sim)! 🔥
 - **[2026.09]** Update the full codebase!
 - **[2026.08]** Update the poster and presentation video.
 - **[2026.06]** Our paper has been accepted to ECCV 2026! 🎉
@@ -74,7 +75,7 @@ pip install numpy opencv-python scipy pillow biopython tqdm torchvision
 
 ## Dataset
 
-Please download the Cryo-Sim dataset from our [Hugging Face Repository](https://huggingface.co/datasets/tomzhaosky/Cryo-Sim). 
+Please download the Cryo-Sim dataset from our [Hugging Face Datasets Repository](https://huggingface.co/datasets/tomzhaosky/Cryo-Sim). 
 
 After downloading and unzipping, FPicker expects the COCO-style dataset to be organized as follows:
 
@@ -137,7 +138,7 @@ python train.py --data_dir ./cryosim --teach_path path/to/pretrained.pth
 
 ## Pretrained Weights
 
-Pretrained weights for the FPicker framework are available on Hugging Face. A single repository contains the checkpoints for all three supported backbone architectures: [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Weights-blue)](https://huggingface.co/tomzhaosky/FPicker)
+Pretrained weights for the FPicker framework are available on Hugging Face. A single repository contains the checkpoints for all three supported backbone architectures: [Hugging Face Weights Repository](https://huggingface.co/tomzhaosky/FPicker).
 
 ## Evaluation
 To run the evaluation pipeline, specify your downloaded checkpoint path and the corresponding architecture via the arch argument. For example, to evaluate using the ResNet-50 backbone:
