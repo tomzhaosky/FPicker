@@ -135,7 +135,14 @@ Train from pretrained weights:
 python train.py --data_dir ./cryosim --teach_path path/to/pretrained.pth
 ~~~
 
+## Pretrained Weights
+
+Pretrained weights for the FPicker framework are available on Hugging Face. A single repository contains the checkpoints for all three supported backbone architectures:
+
+**[🤗 tomzhaosky/FPicker](https://huggingface.co/tomzhaosky/FPicker)**
+
 ## Evaluation
+To run the evaluation pipeline, specify your downloaded checkpoint path and the corresponding architecture via the `--arch` argument. For example, to evaluate using the ResNet-50 backbone:
 
 ~~~bash
 python eval.py --data_dir ./cryosim --model_path ./checkpoints/model_last.pth --arch resnet50
