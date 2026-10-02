@@ -167,11 +167,12 @@ If you find FPicker useful in your research, please cite:
 
 ~~~bibtex
 @inproceedings{zhao2026fpicker,
-	title={FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy},
-	author={Zhao, Tingyin and Huang, Mingtao and Shen, Yuan},
-	booktitle={Computer Vision--ECCV 2026: 19th European Conference, Malm{\"o}, Sweden, September 8--12, 2026, Proceedings, Part XIV},
-	pages={116--133},
-	publisher={Springer Nature}
+  title={FPicker: Topology-Guided Evolution for Filament Tracing in Low-SNR Microscopy},
+  author={Zhao, Tingyin and Huang, Mingtao and Shen, Yuan},
+  booktitle={European Conference on Computer Vision},
+  pages={116--133},
+  year={2026},
+  organization={Springer}
 }
 ~~~
 
